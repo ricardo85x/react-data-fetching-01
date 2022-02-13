@@ -1,7 +1,9 @@
-import axios from "axios"
+import axios, { AxiosRequestConfig } from "axios"
 import { useEffect, useState } from "react"
 
-export function useFetch<T = unknown>(url: string) {
+
+
+export function useFetch<T = unknown>(url: string, options?: AxiosRequestConfig) {
     const [data, setData] = useState<T|null>(null)
 
     const [isFetching, setFetching] = useState(true)
